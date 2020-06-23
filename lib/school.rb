@@ -1,18 +1,31 @@
 # code here!
 require 'pry'
+
 class School
   
-  attr_accessor :roster
+  attr_reader :roster, :name
   
   def initialize(name)
     @name = name
     @roster = {}
   end
   
-  def add_student(name, grade)
-    @add_student
+  def add_student(student_name, grade)
+    if @roster.has_key?(grade)
+      @roster[grade] << student_name
+    else
+      @roster[grade] = [student_name]
+    end 
   end  
-   
+
+  def grade(grade)
+    @roster[grade]
+  end
   
-  
+  def sort(grade) 
+    if @roster.has_key?(grade)
+      puts @roster[grade].value
+    end
+  end
+
 end 
