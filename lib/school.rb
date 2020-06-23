@@ -23,8 +23,7 @@ class School
   end
   
   def sort(grade) 
-    if @roster.has_key?(grade)
-      puts @roster[grade].value
+    
     end
   end
 
